@@ -20,6 +20,8 @@ PORT = int(os.getenv('PORT', 8443))  # Default 8443
 CERT_PATH = os.getenv('CERT_PATH')
 KEY_PATH = os.getenv('KEY_PATH')
 SECRET_TOKEN = os.getenv('SECRET_TOKEN')
+IP = os.getenv('IP')
+
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_message(chat_id=update.effective_chat.id, text="Ciao Pino! Sei di Agnano?")
@@ -51,7 +53,7 @@ if __name__ == '__main__':
     application.add_handler(chat_handler)
 
     application.run_webhook(
-        listen="0.0.0.0",
+        listen=IP,
         port=PORT,
         secret_token=SECRET_TOKEN,
         key=KEY_PATH,
