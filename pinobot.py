@@ -17,8 +17,8 @@ load_dotenv()
 TOKEN = os.getenv('TOKEN')
 WEBHOOK_URL = os.getenv('WEBHOOK_URL')
 PORT = int(os.getenv('PORT', 8443))  # Default 8443
-CERT_PATH = os.getenv('CERT_PATH', 'cert.pem')
-KEY_PATH = os.getenv('KEY_PATH', 'private.key')
+CERT_PATH = os.getenv('CERT_PATH')
+KEY_PATH = os.getenv('KEY_PATH')
 SECRET_TOKEN = os.getenv('SECRET_TOKEN')
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
