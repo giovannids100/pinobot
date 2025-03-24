@@ -2,3 +2,5 @@ services:
   pinobot:
       build: .
       env_file: .env
+      ports:
+        - 8443:8443
